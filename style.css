@@ -142,7 +142,7 @@ body {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-image: url(bg/BG.png);
+    background-image: url(BG.png);
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -154,7 +154,7 @@ body {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-image: url(bg/BG2.png);
+    background-image: url(BG2.png);
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -213,7 +213,7 @@ body {
 }
 
 .img4{
-    background-image: url(bg/BG3.png);
+    background-image: url(BG3.png);
 }
 
 .contact-container{
