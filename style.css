@@ -108,6 +108,11 @@ body {
     transition: box-shadow 0.150s ease-in-out;
 }
 
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
 .footer{
     text-decoration: none;
     position: fixed;
