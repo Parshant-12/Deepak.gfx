@@ -1,0 +1,309 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Varela", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    height: 100vh; /* Ensures the body takes the full viewport height */
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.img{
+    width: 100%;
+    height: 100vh;
+    background-image: url(PORTFOLIO_BG1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-bar{
+    width: 94%;
+    margin: auto;
+    padding: 26px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    animation: text-glow 2.5s ease-in-out infinite;
+}
+
+.nav-icons {
+    display: flex;
+    position: relative;
+    top: 5px;
+    left: -430px;
+    gap: 20px; /* Space between icons */
+}
+
+.icon {
+    width: 26px; /* Adjust icon size */
+    height: 26px; /* Adjust icon size */
+    fill: #fff; /* Icon color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.2s; /* Add transition effect */
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Scale icon on hover */
+}
+
+.nav-bar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 33px;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.nav-bar ul li::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: purple;
+    bottom: -10px;
+    left: 0;
+    position: absolute;
+    transition: 0.1s ease-in;
+}
+
+.nav-bar ul li:hover::after{
+    width: 100%;
+}
+
+.button{
+    position: relative;
+    text-align: center;
+    padding: 15px 0;
+    width: 323px;
+    /* margin: 478px 146px; */
+    top: 478px;
+    left: 146px;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 25px;
+    border: 2px solid rgb(111,0,169);
+    color: white;
+    background: rgb(111,0,169);
+    cursor: pointer;
+    transition: box-shadow 0.150s ease-in-out;
+}
+
+.footer{
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: black;
+    padding-left: 2px 0;
+    padding-bottom: 3px;
+}
+
+.button:hover{
+    box-shadow: 0 0 15px 10px rgba(111, 0, 169, 0.7);
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 35px rgba(255, 255, 255, 0.849);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.img2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(bg/BG.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.img3{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url(bg/BG2.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.scroll-container {
+    position: relative; /* Relative positioning */
+    top: 180px; /* Move 20px down from its normal position */
+    left: 280px; /* Move 20px right from its normal position */
+    z-index: 2;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    width: 66vw; /* Adjust the width as necessary */
+    background:transparent; /* Semi-transparent background */
+}
+
+.scroll-container iframe {
+    flex: 0 0 auto;
+    width: 300px; /* Set a fixed width for the iframes */
+    height: 540px; /* Set a fixed height for the iframes */
+    margin-right: 10px;
+    border: none; /* Remove border if desired */
+    border-radius: 20px;
+}
+
+.vertical-scroll-container {
+    position: relative;
+    top: 180px;
+    left: 280px; 
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    width: 66vw;
+    height: 58vh;
+    background: transparent;
+}
+
+.vertical-scroll-container iframe {
+    flex: 0 0 auto;
+    width: 1235px; /* Set a fixed width for the iframes */
+    height: 540px; /* Set a fixed height for the iframes */
+    margin-bottom: 17px; /* Add space between iframes */
+    border: none;
+    border-radius: 20px;
+}
+
+.vertical-scroll-container iframe:last-child {
+    margin-bottom: 0;
+}
+
+.img4{
+    background-image: url(bg/BG3.png);
+}
+
+.contact-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-left{
+    position: relative;
+    display: flex;
+    top: -70px;
+    left: 70px;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h1{
+    font-weight: 600;
+    color: purple;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: purple;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-input{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: rgb(238, 105, 105);
+    border-radius: 50px;
+}
+
+.contact-left textarea{
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-input:focus{
+    border:2px solid purple;
+}
+
+.contact-input::placeholder{
+    color: gray;
+}
+
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 86px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background:purple;
+    cursor: pointer;
+    transition: box-shadow 0.150s ease-in-out;
+}
+
+.contact-left button:hover{
+    box-shadow: 0 0 15px 10px rgb(128,0,128,0.7);
+}
+
+.contact-right img{
+    position: relative;
+    top: -70px;
+    left: -70px;
+    width: 500px;
+}
+
+@media (max-width:800px){
+    .contact-input{
+        width:80vw;
+    }
+    .contact-right{
+        display: none;
+    }
+}
