@@ -6,22 +6,35 @@
     font-weight: 500;
     font-style: normal;
     font-variation-settings:
-      "wdth" 100;
+      "width" 100;
 }
 
 body {
     margin: 0;
     position: relative;
-    height: 100vh; /* Ensures the body takes the full viewport height */
-    overflow: hidden; /* Prevents scrolling */
+    height: 100vh;
+    max-height: 100vh;
+    overflow-x: hidden;
 }
 
 .img{
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url(PORTFOLIO_BG1.png);
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
+}
+.heading{
+    display: none;
+}
+.nav-bar-container-for-menu{
+    width: 94%;
+    margin: auto;
+    padding: 26px 0px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
 }
 
 .nav-bar{
@@ -31,6 +44,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 3;
 }
 
 .logo{
@@ -41,15 +55,19 @@ body {
     animation: text-glow 2.5s ease-in-out infinite;
 }
 
-.nav-icons {
+.icon-logo {
     display: flex;
     position: relative;
-    top: 5px;
-    left: -430px;
-    gap: 20px; /* Space between icons */
+    gap: 20px;
 }
 
+.icon-set{
+    display: flex;
+    gap: 20px;
+}
 .icon {
+    position: relative;
+    top: 15%;
     width: 26px; /* Adjust icon size */
     height: 26px; /* Adjust icon size */
     fill: #fff; /* Icon color */
@@ -64,7 +82,7 @@ body {
 .nav-bar ul li{
     list-style: none;
     display: inline-block;
-    margin: 0 33px;
+    margin: 0 20px;
     position: relative;
     font-size: 20px;
 }
@@ -90,12 +108,23 @@ body {
     width: 100%;
 }
 
+.bars:after {
+	content: '\f0c9';
+	font-family: fontAwesome;
+	color: #fff;
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 81px;
+	float: right;
+	display: none;
+	cursor: pointer;
+}
+
 .button{
     position: relative;
     text-align: center;
     padding: 15px 0;
     width: 323px;
-    /* margin: 478px 146px; */
     top: 478px;
     left: 146px;
     border-radius: 0px;
@@ -107,7 +136,6 @@ body {
     cursor: pointer;
     transition: box-shadow 0.150s ease-in-out;
 }
-
 .button a{
     text-decoration: none;
     color: white;
@@ -147,7 +175,7 @@ body {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-image: url(BG.png);
+    background-image: url(bg/BG.png);
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -159,38 +187,44 @@ body {
     left: 0;
     height: 100vh;
     width: 100%;
-    background-image: url(BG2.png);
+    background-image: url(bg/BG2.png);
     background-size: cover;
     background-position: center;
     z-index: 1;
 }
 
 .scroll-container {
-    position: relative; /* Relative positioning */
-    top: 180px; /* Move 20px down from its normal position */
-    left: 280px; /* Move 20px right from its normal position */
+    position: relative;
+    top: 18vh; 
+    left: 16vw; 
     z-index: 2;
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
     padding: 20px;
     /* border: 1px solid #ddd; */
-    width: 66vw; /* Adjust the width as necessary */
-    background:transparent; /* Semi-transparent background */
+    width: 66vw;
+    background:transparent;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-container.menu-active {
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 .scroll-container iframe {
     flex: 0 0 auto;
-    width: 300px; /* Set a fixed width for the iframes */
-    height: 540px; /* Set a fixed height for the iframes */
+    width: 300px;
+    height: 540px;
     margin-right: 10px;
-    border: none; /* Remove border if desired */
+    border: none;
     border-radius: 20px;
 }
 
 .vertical-scroll-container {
     position: relative;
-    top: 180px;
+    top: 145px;
     left: 280px; 
     z-index: 2;
     display: flex;
@@ -200,17 +234,23 @@ body {
     padding: 20px;
     /* border: 1px solid #ddd; */
     width: 66vw;
-    height: 58vh;
+    height: 70vh;
     background: transparent;
+    transition: opacity 0.3s ease;
 }
 
 .vertical-scroll-container iframe {
     flex: 0 0 auto;
     width: 1235px; /* Set a fixed width for the iframes */
-    height: 540px; /* Set a fixed height for the iframes */
+    height: 580px; /* Set a fixed height for the iframes */
     margin-bottom: 17px; /* Add space between iframes */
     border: none;
     border-radius: 20px;
+}
+
+.vertical-scroll-container.menu-active {
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 .vertical-scroll-container iframe:last-child {
@@ -218,7 +258,7 @@ body {
 }
 
 .img4{
-    background-image: url(BG3.png);
+    background-image: url(bg/BG3.png);
 }
 
 .contact-container{
@@ -226,8 +266,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    transition: opacity 0.5s ease;
 }
 
+.contact-container.menu-active {
+    opacity: 0.1;
+    pointer-events: none;
+}
 .contact-left{
     position: relative;
     display: flex;
@@ -310,5 +355,307 @@ body {
     }
     .contact-right{
         display: none;
+    }
+}
+
+@media (max-width:768px){
+    .contact-input{
+        width:60vw;
+    }
+    .contact-right{
+        display: none;
+    }
+    .contact-container{
+        justify-content: left;
+    }
+    .contact-left{
+        top: -90px;
+        
+    }
+}
+
+@media (max-height:600px){
+    .contact-input{
+        height:10vw;
+    }
+    .contact-right{
+        display: none;
+    }
+    .contact-container{
+        justify-content: left;
+    }
+    .contact-left{
+        top: -50px;
+        left: 50px;
+    }
+}
+/* ``````````````````````````````Width````````````````````````````900px``````````````START```` */
+@media all and (max-width: 900px){
+    /* page 1 */
+    .button{
+        width: 323px;
+        top: 75vh;
+        left: 30vw;
+    }
+    .img{
+        background-position: -970px;
+        background-size: auto;
+        margin-right: 10px;
+    }
+    /* page 1,2,3 */
+    .menu {
+		position: fixed;
+		top: 130px;
+		right: -100%;
+		width: 60%;
+        height: auto;
+		/* max-height: calc(100vh - 70%); */
+		background: #000000;
+		transition: right 0.5s;
+        z-index: 4;
+        border: 1px solid white;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        overflow: hidden;
+	}
+	.nav-bar-container-for-menu .nav-bar .menu ul {
+		text-align: center;
+	}
+	.nav-bar-container-for-menu .nav-bar .menu ul li {
+		margin-bottom: 10px;
+	}
+	.nav-bar-container-for-menu .nav-bar .menu ul li a {
+		height: 50px;
+		line-height: 70px;
+        font-size: 30px;
+	}
+	.bars:after {
+		display: block;
+        position: relative;
+        right: 0%;
+	}
+	.active{
+		right: 18%;
+	}    
+    /* page 1 */
+    .scroll-container{
+        left: 13vw;
+    }
+    .scroll-container iframe {
+        height: 450px;
+        width: 250px;
+    }
+}
+/* ````````````````````````````````````````````````````````````900px```````END``````````` */
+/* ```````````````````````````````Width`````````````````````````````425px```````Start``````````` */
+@media all and (max-width: 425px){
+    .button{
+        width: 300px;
+        height: 12px;
+        position: relative;
+        left: 19vw;
+        top: 66vh;
+    }
+    .scroll-container{
+        width: 62vw;
+        left: 12vw; 
+    }
+    .nav-bar-container-for-menu .nav-bar .menu ul li a {
+		height: 50px;
+		line-height: 50px;
+        font-size: 22px;
+	}
+    .logo{
+        font-size: 26px;
+    }
+    .icon{
+        width: 20px; /* Adjust icon size */
+        height: 20px; /* Adjust icon size */
+    }
+    .bars:after{
+        font-size: 30px;
+    }
+}
+/* ````````````````````````````````````````````````````````````425px```````END``````````` */
+/* `````````````````````````````````Height`````````````````````568px```````Start``````````` */
+@media all and (max-height:667px){
+    .nav-bar-container-for-menu{
+        padding-top: 15px;
+    }
+    .scroll-container iframe{
+        height: 390px;
+        width: 210px;
+    }
+    .scroll-container{
+        top: 18vh;
+    }
+}
+@media all and (max-height:568px){
+    .scroll-container iframe{
+        height: 350px;
+        width: 195px;
+    }
+    .nav-bar-container-for-menu{
+        padding-top: 10px;
+    }
+}
+@media all and (max-height:480px){
+    .scroll-container iframe{
+        height: 280px;
+        width: 155px;
+    }
+    .nav-bar-container-for-menu{
+        padding-top: 0px;
+    }
+}
+
+/* `````````````````````````````````Height`````````````````````568px```````END``````````` */
+/* ``````````````````````````````````Width`````````````````````1860px```````Start```````` */
+@media all and (max-width:1860px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 300px; 
+        width: 70vw;
+        height: 65vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 1100px; /* Set a fixed width for the iframes */
+        height: 450px; /* Set a fixed height for the iframes */
+    }
+}
+
+@media all and (max-width:1440px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 150px; 
+        width: 76vw;
+        height: 65vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 1100px; /* Set a fixed width for the iframes */
+        height: 450px; /* Set a fixed height for the iframes */
+    }
+    .img{
+        background-image: url(PORTFOLIO_BG1_1440.png);
+    }
+    .button{
+        left: 5vw;
+    }
+}
+
+@media all and (max-width:1024px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 100px; 
+        width: 76vw;
+        height: 65vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 780px; /* Set a fixed width for the iframes */
+        height: 450px; /* Set a fixed height for the iframes */
+    }
+    .img{
+        background-image: url(PORTFOLIO_BG1_mob.png);
+    }
+    .button{
+        top: 76vh;
+        left: 35vw;
+    }
+}
+
+@media all and (max-width:768px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 60px; 
+        width: 76vw;
+        height: 65vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 590px; /* Set a fixed width for the iframes */
+        height: 345px; /* Set a fixed height for the iframes */
+    }
+    .heading{
+        display: block;
+        position: relative;
+        left: 0vw;
+        top: -100px;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+    }
+    .img{
+        background-image: url(PORTFOLIO_BG1_mob.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .button{
+        width: 323px;
+        top: 70vh;
+        left: 30vw;
+        height: 60px;
+    }
+}
+
+@media all and (max-width:425px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 20px; 
+        width: 76vw;
+        height: 55vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 330px; /* Set a fixed width for the iframes */
+        height: 220px; /* Set a fixed height for the iframes */
+    }
+    .img{
+        background-position: center;
+        background-size: cover;
+    }
+    .button{
+        width: 300px;
+        left: 15vw;
+        top: 68vh;
+    }
+}
+
+@media all and (max-width:375px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 20px; 
+        width: 76vw;
+        height: 55vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 290px; /* Set a fixed width for the iframes */
+        height: 140px; /* Set a fixed height for the iframes */
+    }
+    .button{
+        width: 250px;
+        left: 18vw;
+        top: 69vh;
+    }
+}
+
+@media all and (max-width:320px){
+    .vertical-scroll-container{
+        top: 150px;
+        left: 10px; 
+        width: 76vw;
+        height: 55vh;
+    }
+    .vertical-scroll-container iframe{
+        width: 250px; /* Set a fixed width for the iframes */
+        height: 180px; /* Set a fixed height for the iframes */
+    }
+    .button{
+        width: 240px;
+        left: 16vw;
+        top: 64vh;
+        height: 55px;
+    }
+    .heading{
+        top: -90px;
+        font-size: 15px;
     }
 }
