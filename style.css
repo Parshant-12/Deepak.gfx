@@ -420,12 +420,12 @@ body {
 		margin-bottom: 10px;
 	}
 	.nav-bar-container-for-menu .nav-bar .menu ul li a {
-		height: 50px;
-		line-height: 70px;
-        font-size: 30px;
+	height: 50px;
+	line-height: 70px;
+        font-size: 27px;
 	}
 	.bars:after {
-		display: block;
+	display: block;
         position: relative;
         right: 0%;
         z-index: 5;
