@@ -399,14 +399,14 @@ body {
     }
     /* page 1,2,3 */
     .menu {
-		position: fixed;
-		top: 1px;
-		right: -100%;
-		width: 47%;
+	position: fixed;
+	top: 1px;
+	right: -100%;
+	width: 47%;
         height:87vh;
-		/* max-height: calc(100vh - 70%); */
-		background: rgb(0, 0, 0);
-		transition: right 0.5s;
+	/* max-height: calc(100vh - 70%); */
+	background: rgb(31, 30, 30);
+	transition: right 0.5s;
         z-index: 4;
         border: 1px solid white;
         padding-top: 17%;
