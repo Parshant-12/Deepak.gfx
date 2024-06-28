@@ -16,7 +16,6 @@ body {
     max-height: 100vh;
     overflow-x: hidden;
 }
-
 .img{
     position: relative;
     width: 100%;
@@ -38,6 +37,7 @@ body {
 }
 
 .nav-bar{
+    position: relative;
     width: 94%;
     margin: auto;
     padding: 26px 0px;
@@ -82,7 +82,7 @@ body {
 .nav-bar ul li{
     list-style: none;
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 8px;
     position: relative;
     font-size: 20px;
 }
@@ -146,11 +146,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 20px;
-    background: black;
-    padding-left: 2px 0;
-    padding-bottom: 3px;
+    background: transparent;
 }
 
 .button:hover{
@@ -212,7 +208,6 @@ body {
     opacity: 0.1;
     pointer-events: none;
 }
-
 .scroll-container iframe {
     flex: 0 0 auto;
     width: 300px;
@@ -405,16 +400,16 @@ body {
     /* page 1,2,3 */
     .menu {
 		position: fixed;
-		top: 130px;
+		top: 1px;
 		right: -100%;
-		width: 60%;
-        height: auto;
+		width: 47%;
+        height:87vh;
 		/* max-height: calc(100vh - 70%); */
-		background: #000000;
+		background: rgb(0, 0, 0);
 		transition: right 0.5s;
         z-index: 4;
         border: 1px solid white;
-        padding-top: 8%;
+        padding-top: 17%;
         padding-bottom: 8%;
         overflow: hidden;
 	}
@@ -433,10 +428,14 @@ body {
 		display: block;
         position: relative;
         right: 0%;
+        z-index: 5;
 	}
+    .icon{
+        z-index: 5;
+    }
 	.active{
-		right: 18%;
-	}    
+		right: -1%;
+	}
     /* page 1 */
     .scroll-container{
         left: 13vw;
@@ -460,6 +459,15 @@ body {
         width: 62vw;
         left: 12vw; 
     }
+    .nav-bar-container-for-menu{
+        padding: 5px;
+        margin: 0px;
+    }
+    .nav-bar{
+        margin:0px 12px;
+        padding: 10px 0px;
+        top: -10px;
+    }
     .nav-bar-container-for-menu .nav-bar .menu ul li a {
 		height: 50px;
 		line-height: 50px;
@@ -469,18 +477,19 @@ body {
         font-size: 26px;
     }
     .icon{
-        width: 20px; /* Adjust icon size */
-        height: 20px; /* Adjust icon size */
+        width: 20px;
+        height: 20px;
     }
     .bars:after{
         font-size: 30px;
+        top: -10px;
     }
 }
 /* ````````````````````````````````````````````````````````````425px```````END``````````` */
 /* `````````````````````````````````Height`````````````````````568px```````Start``````````` */
 @media all and (max-height:667px){
     .nav-bar-container-for-menu{
-        padding-top: 15px;
+        padding: 15px;
     }
     .scroll-container iframe{
         height: 390px;
@@ -517,6 +526,7 @@ body {
         left: 300px; 
         width: 70vw;
         height: 65vh;
+        z-index: 1;
     }
     .vertical-scroll-container iframe{
         width: 1100px; /* Set a fixed width for the iframes */
@@ -579,7 +589,7 @@ body {
         position: relative;
         left: 0vw;
         top: -100px;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: bold;
         color: white;
         text-align: center;
@@ -588,7 +598,8 @@ body {
         background-image: url(Website_BG_mobile.png);
         background-size: cover;
         background-position: center;
-    }
+
+    } 
     .button{
         width: 323px;
         top: 70vh;
@@ -599,23 +610,27 @@ body {
 
 @media all and (max-width:425px){
     .vertical-scroll-container{
-        top: 150px;
-        left: 20px; 
-        width: 76vw;
-        height: 55vh;
+        top: 100px;
+        left: 0px; 
+        width: 87vw;
+        height: 68vh;
     }
     .vertical-scroll-container iframe{
-        width: 330px; /* Set a fixed width for the iframes */
-        height: 220px; /* Set a fixed height for the iframes */
+        width: 350px;
+        height: 220px; 
     }
-    .img{
-        background-position: center;
-        background-size: cover;
+    .heading{
+        top: 20px;
     }
     .button{
-        width: 300px;
-        left: 15vw;
-        top: 68vh;
+        width: 200px;
+        left: 25vw;
+        top: 21vh;
+    }
+    .img{
+        background-image: url(Website_BG_mobile_1.png);
+        background-size: cover;
+        background-position: center;
     }
 }
 
