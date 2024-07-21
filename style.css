@@ -37,6 +37,9 @@
     top: 10vh;
     width: 100%;
 }
+.right ul .home{
+    display: none;
+}
 .right ul li{
     list-style: none;
     display: inline-block;
@@ -770,16 +773,19 @@ footer .footer .first-footer ul li a{
         padding-bottom: 8%;
         overflow: hidden;
 	}
-    .right ul{
+    	.right ul{
         flex-direction: column;
         align-items: center;
         margin-top: 4vh;
-    }
-    .nav-bar{
+    	}
+	.right ul .home{
+        display: block;
+    	}
+    	.nav-bar{
         flex-direction: row;
         height: 9vh;
         justify-content: unset;
-    }
+    	}
 	.nav-bar .menu ul li {
         margin-bottom: 40px;
 	}
@@ -788,23 +794,23 @@ footer .footer .first-footer ul li a{
 	/*line-height: 35px; */
         font-size: 20px;
 	}
-    .bars:after {
+    	.bars:after {
         display: block;
         position: fixed;
         right: 5%;
         z-index: 10;
         top: 2.5vh;
 	}
-    .icon-logo{
+    	.icon-logo{
         align-items: center;
         height: 9vh;
         justify-content: unset;
         margin-left: 5vw;
-    }
-    .hr1 {
+    	}
+    	.hr1 {
         top: 9vh;
-    }
-    .active{
+    	}
+    	.active{
 		right: -1%;
 	}
 }
