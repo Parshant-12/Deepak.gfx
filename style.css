@@ -781,11 +781,11 @@ footer .footer .first-footer ul li a{
         justify-content: unset;
     }
 	.nav-bar .menu ul li {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
 	}
 	.nav-bar .menu ul li a {
         height: 50px;
-		line-height: 35px;
+	/*line-height: 35px; */
         font-size: 20px;
 	}
     .bars:after {
