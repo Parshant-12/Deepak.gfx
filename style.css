@@ -144,7 +144,7 @@ section .section1-left{
 }
 .line-2{
     font-weight: 500;
-    font-size: 2.2vw;
+/*     font-size: 2.2vw; */
 }
 
 section .section1-right img{
