@@ -23,7 +23,7 @@
     margin-right: 5rem;
 }
 .nav-bar{
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     display: flex;
