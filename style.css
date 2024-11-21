@@ -8,12 +8,12 @@
     font-variation-settings:
     "width" 100;
 }
+/* ------------------------ Front Page ------------------------------------ */
 .img{
     overflow-x: hidden;
     position: relative;
     /* box-sizing: border-box; */
     width: 100%;
-    min-height: 150vh;
     background:linear-gradient(109.6deg, rgb(1, 9, 22) 11.2%, rgb(43, 10, 56) 91.1%);
 }
 .left{
@@ -23,12 +23,13 @@
     margin-right: 5rem;
 }
 .nav-bar{
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
+    z-index: 1000;
     backdrop-filter: blur(20px);
     height: 10vh;
 }
@@ -116,40 +117,46 @@
     align-items: center;
     color: white;
     max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    margin:auto;
+    padding:0 2vw;
     /* border: 1px solid red; */
 }
 section .section1-left{
-    font-size: 2.4vw;
+    font-size: 2vw;
     font-weight: bold;
-    margin-top: 4rem;
+    margin-top: 10vh;
     width: 38vw;
+}
+#head-name{
+    font-weight:bolder;
+    font-size: 3.5vw;
 }
 .name{
     color: rgb(161, 0, 161);
-    font-weight: bold;
+    font-weight:bolder;
+    display: inline;
 }
-.video-editor{
-    font-size: 2.4vw;
-}
-.skill{
-    font-size: 2.4vw;
-}
-#element{
-    color: rgb(146, 86, 202);
-    font-weight: 600;
-}
+
 .line-2{
-    font-weight: 500;
-/*     font-size: 2.2vw; */
+    font-weight:600;
+    /* font-size: 4.5vw; */
+}
+.work{
+    font-weight: lighter;
+    /* font-size: 3.5vw; */
+}
+.hr2{
+    width: 33%;
+    border-color: rgb(146, 86, 191);
+    background-color: rgb(146, 86, 191);
+    height: 2px;
+    border-radius: 8px;
+    position: relative;
 }
 
 section .section1-right img{
     width: 36vw;
-    margin: 12vh -80px;
+    margin: 8vh -6vw;
     margin-bottom: 0;
 }
 .button{
@@ -171,15 +178,11 @@ section .section1-right img{
     color: white;
 }
 .section-2{
-    height: 40vh;
     position: relative;
-    /* top: -11.5vh; */
-    /* margin: 0 10vw; */
+    min-height: 40vh;
     max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    margin:auto;
+    padding: 0 7vw 5vh 7vw;
     /* border: 1px solid blue; */
 }
 .section-2 h1{
@@ -206,9 +209,6 @@ footer{
     font-weight: 300;
     background-color: rgb(44, 44, 44);
     padding: 20px 0;
-    height: 18vh;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 footer .footer-rights{
@@ -259,6 +259,7 @@ footer .footer .first-footer ul li a{
     }
 }
 
+/* ------------------------ Short Form ------------------------------------ */
 .img2{
     position: absolute;
     top: 0;
@@ -269,18 +270,20 @@ footer .footer .first-footer ul li a{
     background-size: cover;
     background-position: center;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 .img3{
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background-image: url(BG2.png);
     background-size: cover;
     background-position: center;
-    z-index: 1;
+    z-index: -1;
+    overflow-x: hidden;
 }
 
 .scroll-container {
@@ -477,39 +480,33 @@ footer .footer .first-footer ul li a{
 @media screen and (max-width: 1024px) {
     .section-1{
         max-width: 768px;
-        display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        height: 125vh;
+        height: auto;
+        position: relative;
+        top: 0vh;
     }
     section .section1-right img{
         width: 55vw;
     }
     section .section1-left{
-        font-size: 2.8rem;
-        width: 70vw;
-        margin-top: -12rem;
+        font-size: 3vw;
         text-align: center;
-    }
-    .video-editor{
-        font-size: 3.1rem;
-    }
-    .skill{
-        font-size: 3.1rem;
-        line-height: 3rem;
         position: relative;
-        top: 3vh;
+        top: -15vh;
+    }
+    .hr2{
+        margin: auto;
+        width: 55%;
+    }
+    #head-name{
+        font-size: 4.2vw;
     }
     .button{
         top: 8vh;
     }
     br{
         display: none;
-    }
-    .section-2{
-        max-width: 768px;
-        top: 15vh;
-        height: 70vh;
     }
     .section-2 h1{
         display: flex;
@@ -558,57 +555,23 @@ footer .footer .first-footer ul li a{
     
 }
 @media (max-width: 768px) {
-    
-    .section-1{
-        max-width: 475px;
-        height: 102vh;
-    }
-    .section-2{
-        max-width: 100%;
-        padding-left: 5rem;
-        padding-right: 5rem;
-        height: 100vh;
-    }
-    section .section1-right img {
-        width: 70vw;
-        margin: 10vh;
-    }
     section .section1-left{
         font-size: 2rem;
         width: 60vw;
-        margin-top: -9rem;
     }
-    .video-editor{
-        font-size: 2.1rem;
-    }
-    .skill{
-        font-size: 2.5rem;
-        line-height: 3rem;
-        position: relative;
-        top: 3vh;
+    #head-name{
+        font-size: 5vw;
     }
 }
 @media screen and (max-width: 640px) {
-    .section-1{
-        width: 100%;
-        padding: 0;
-    }
-    section .section1-left{
-        width: 100%;
-    }
-    .section-2{
-        max-width: 100%;
+    #head-name{
+        font-size: 7vw;
     }
     section .section1-right img {
         width: 70vw;
-        margin: 10vh;
     }
 }
 @media screen and (max-width:480px) {
-    .section-1{
-        padding: 0;
-        height: 70vh;
-    }
     .logo{
         font-size: 25px;
     }
@@ -619,41 +582,18 @@ footer .footer .first-footer ul li a{
     .right ul li{
         font-size: 1rem;
     }
-    section .section1-right img{
-        width: 70vw;
-        margin-top: 10vh;
-    }
     section .section1-left{
         font-size: 1.4rem;
-    }
-    .video-editor{
-        font-size: 1.5rem;
-    }
-    .skill{
-        font-size: 1.5rem;
-        line-height: 4vh;
     }
     .button{
         width: 30vw;
         font-size: 1rem;
-    }
-    .section-2{
-        padding-left: 3rem;
-        padding-right: 3rem;
-        height: 50vh;
     }
     .section-2 h1{
         font-size: 2.5rem;
     }
     .section-2 p{
         font-size: 1rem;
-    }
-    footer{
-        position: absolute;
-        height: 22vh;
-    }
-    .img{
-        height: 160vh;
     }
 }
 
@@ -686,12 +626,7 @@ footer .footer .first-footer ul li a{
     .section-2 h1{
         font-size: 2rem;
     }
-    footer{
-        height: 30vh;
-        /* padding: 0; */
-        bottom: 0;
-        position: absolute;
-    }
+    
     .footer{
         flex-direction: column;
         align-items: center;
@@ -710,9 +645,6 @@ footer .footer .first-footer ul li a{
     footer .footer-rights{
         font-size: 0.7rem;
         text-align:left;
-    }
-    .section-2{
-        height: 100vh;
     }
 }
 @media screen and (max-width: 900px) {
@@ -753,11 +685,6 @@ footer .footer .first-footer ul li a{
     }
 }
 
-@media screen and (max-height: 480px) {
-  .section-1{
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 630px) {
     .menu {
         position: fixed;
