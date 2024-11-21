@@ -1,27 +1,43 @@
+.video-wrapper {
+    position: relative;
+    width: 100%; /* Responsive width */
+    height: auto;
+    padding-top: 56.25%; /* Maintains 16:9 aspect ratio */
+    overflow: hidden;
+    border-radius: 20px; /* Rounded corners */
+    background: #f0f0f0; /* Optional: Background for empty space */
+    z-index: 0;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px; 
+    object-fit: cover; 
+    z-index: 0;
+}
+
 .vertical-scroll-container {
     position: relative;
-    top: 15vh;
-    left: 15vw;
-    z-index: 2;
+    margin: 22vh auto;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 0 20px;
     /* border: 1px solid #ddd; */
-    width: 65vw;
-    height: 70vh;
+    max-width: 53vw;
+    height: 66vh;
+    gap: 3.5vh;
     background: transparent;
     transition: opacity 0.5s ease-in-out;
+    z-index: 0;
 }
-.vertical-scroll-container iframe {
-    flex: 0 0 auto;
-    width: 65vw;
-    height: 61vh;
-    margin-bottom: 26px;
-    /* border: none; */
-    border-radius: 20px;
-}
+
 .vertical-scroll-container.menu-active {
     opacity: 0.04;
     pointer-events: none;
@@ -29,91 +45,14 @@
 .vertical-scroll-container iframe:last-child {
     margin-bottom: 0;
 }
-@media all and (max-width:1860px){
-    .vertical-scroll-container{
-        top: 18vh;
-        left: 15vw;
-        width: 70vw;
-        height: 65vh;
-        z-index: 1;
-    }
-    .vertical-scroll-container iframe{
-        width: 65vw;
-        height: 61vh;
-    }
-}
-@media all and (max-width:1440px){
-    .vertical-scroll-container{
-        top: 18vh;
-        left: 11vw;
-        width: 76vw;
-        height: 65vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 75vw;
-        height: 56vh;
-    }
-}
 
-
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width:375px){
     .vertical-scroll-container{
-        top: 20vh;
-        left: 10vw;
-        width: 76vw;
-        height: 65vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 75vw;
-        height: 40vh;
+        max-width: 86vw;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width:1024px) {
     .vertical-scroll-container{
-        top: 20vh;
-        left: 8px;
-        width: 86vw;
-        height: 64vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 86vw;
-        height: 22vh;
-    }
-}
-@media screen and (max-width: 375px) {
-    .vertical-scroll-container{
-        top: 150px;
-        left: 20px; 
-        width: 76vw;
-        height: 55vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 290px;
-        height: 140px;
-    }
-}
-@media screen and (max-width: 414px) {
-    .vertical-scroll-container{
-        top: 15vh;
-        left: 0px;
-        width: 90vw;
-        height: 65vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 90vw;
-        height: 24vh;
-    }
-}
-@media screen and (max-width: 320px) {
-    .vertical-scroll-container{
-        top: 20vh;
-        left: 10px;
-        width: 81vw;
-        height: 60vh;
-    }
-    .vertical-scroll-container iframe{
-        width: 264px; /* Set a fixed width for the iframes */
-        height: 140px; /* Set a fixed height for the iframes */
+        max-width: 86vw;
     }
 }
