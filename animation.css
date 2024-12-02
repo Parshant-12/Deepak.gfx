@@ -1,0 +1,65 @@
+section .animate{
+    transition:1s;
+    filter: blur(5px);
+    opacity: 0;
+}
+section.show-animation .animate{
+    filter: blur(0);
+    opacity: 1;
+}
+
+.section-1 .animate{
+    transform: translateX(-60%);
+}
+.section-1.show-animation .animate{
+    transform: translateX(0);
+}
+.section-1 .p2{
+    transform: translateY(30%);
+    transition:1s;
+    filter: blur(5px);
+    opacity: 0;
+}
+.section-1.show-animation .p2{
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.section-2 .animate{
+    transform: translateY(40%);
+}
+.section-2.show-animation .animate{
+    transform: translateY(0);
+}
+
+.section-3 .animate{
+    transform: scale(0.8);
+}  
+.section-3.show-animation .animate{
+    transform: scale(1);
+}
+.section-4 .animate{
+    transform: scale(0.8);
+}  
+.section-4.show-animation .animate{
+    transform: scale(1);
+}
+.section-4.show-animation .vertical-scroll-container{
+    overflow-y: auto;
+}
+
+.section-5 .card{
+    transform: translateX(-100%);
+    transition-delay: calc(.2s * var(--i));
+}   
+.section-5.show-animation .card{
+    transform: translateX(0);
+}
+
+.section-6 .container{
+    transform: translateY(40%);
+}
+.section-6.show-animation .animate{
+    transform: translateY(0);
+}
