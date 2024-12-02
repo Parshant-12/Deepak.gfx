@@ -857,3 +857,8 @@ footer .footer .first-footer ul li a {
         font-size: 22px;
     }
 }
+@media screen and (max-width:415px) {
+    .vertical-scroll-container {
+        height: 378px;
+    } 
+}
