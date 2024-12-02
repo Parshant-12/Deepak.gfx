@@ -192,6 +192,7 @@ section .section1-left {
 #why{
     text-decoration:underline ;
     font-size: 46px;
+    animation: glow 3s ease-in-out infinite;
 }
 #info{
     font-size: 22px;
@@ -253,6 +254,7 @@ section .section1-left {
     font-size: 3.2rem;
     font-weight: bold;
     text-align: center;
+    animation: glow 3s ease-in-out infinite;
 }
 .section-2 hr {
     width: 20vw;
@@ -275,6 +277,7 @@ section .section1-left {
     font-size: 46px;
     text-align: center;
     padding-bottom: 30px;
+    animation: glow 3s ease-in-out infinite;
 }
 .section-3{
     padding-top: 150px;
