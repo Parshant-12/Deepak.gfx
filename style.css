@@ -439,7 +439,7 @@ section .section1-left {
     width: 420px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.200);
-    backdrop-filter: blur(25px);
+    /* backdrop-filter: blur(25px); */
     color: white;
     border-radius: 12px;
     padding: 25px 35px;
